@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:restaurant_app_rafii/data/image/image.dart';
 import 'package:restaurant_app_rafii/domain/entities/restaurant_entities.dart';
 import 'package:restaurant_app_rafii/style/color.dart';
+import 'package:restaurant_app_rafii/widget/card_horizontal.dart';
 
 class DetailRestaurant extends StatelessWidget {
   final RestaurantEntity restaurantEntity;
@@ -76,10 +78,46 @@ class DetailRestaurant extends StatelessWidget {
                     height: 25,
                   ),
                   Text(
-                    'Makanan',
+                    'Foods',
                     style: Get.textTheme.labelLarge!
                         .copyWith(color: ColorConfig.mainColor),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  SizedBox(
+                    height: 150,
+                    child: ListView.builder(
+                      itemCount: 5,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, i) {
+                        // MenuEntity menuEntity =
+                        //     restaurantEntity.menu[i]!.toEntity();
+                        return CardWidget.horizontal(food, 'data 2');
+                      },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    'Drinks',
+                    style: Get.textTheme.labelLarge!
+                        .copyWith(color: ColorConfig.mainColor),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  SizedBox(
+                    height: 150,
+                    child: ListView.builder(
+                      itemCount: 5,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, i) {
+                        return CardWidget.horizontal(drink, 'data 2');
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),

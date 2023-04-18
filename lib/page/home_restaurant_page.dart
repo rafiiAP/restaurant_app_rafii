@@ -11,6 +11,7 @@ class HomeRestaurant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     GetxHome getxHome = Get.put(GetxHome());
+    getxHome.getDataRestaurant();
 
     return Scaffold(
       body: SafeArea(

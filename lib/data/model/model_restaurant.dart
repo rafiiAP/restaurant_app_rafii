@@ -9,7 +9,7 @@ class ModelRestaurant {
   String pictureId;
   String city;
   double rating;
-  Map<String, ModelMenu> menu;
+  ModelMenu menu;
 
   ModelRestaurant({
     required this.id,
@@ -22,16 +22,17 @@ class ModelRestaurant {
   });
 
   factory ModelRestaurant.fromJson(Map<String, dynamic> json) {
-    // List<dynamic> vaOffliner = json["vaTransaksiOffline"] ?? [];
+    Map<String, dynamic> vaMenu = json["menus"] ?? {};
     return ModelRestaurant(
-      id: json["id"] ?? "",
-      name: json["name"] ?? "",
-      description: json["description"] ?? '',
-      pictureId: json["pictureId"] ?? '',
-      city: json["city"] ?? '',
-      rating: double.parse(json["rating"].toString()),
-      menu: json["menu"] ?? {},
-    );
+        id: json["id"] ?? "",
+        name: json["name"] ?? "",
+        description: json["description"] ?? '',
+        pictureId: json["pictureId"] ?? '',
+        city: json["city"] ?? '',
+        rating: double.parse(json["rating"].toString()),
+        menu: json['menus'] != null
+            ? ModelMenu.fromJson(json['menus'])
+            : ModelMenu.fromJson(json));
   }
 
   Map<String, dynamic> toJson() => {
@@ -51,6 +52,6 @@ class ModelRestaurant {
         pictureId: pictureId,
         city: city,
         rating: rating,
-        menu: menu,
+        // menu: menu,
       );
 }
