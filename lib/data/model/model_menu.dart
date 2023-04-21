@@ -9,11 +9,10 @@ class ModelMenu {
   ModelMenu({required this.foods, required this.drinks});
 
   factory ModelMenu.fromJson(Map<String, dynamic> json) {
-    List<dynamic> vaFoods = json["foods"] ?? [];
-    List<dynamic> vaDrinks = json["drinks"] ?? [];
     return ModelMenu(
-      foods: vaFoods.map((e) => ModelFood.fromJson(e)).toList(),
-      drinks: vaDrinks.map((e) => ModelDrink.fromJson(e)).toList(),
+      foods: (json['foods'] as List).map((e) => ModelFood.fromJson(e)).toList(),
+      drinks:
+          (json['drinks'] as List).map((e) => ModelDrink.fromJson(e)).toList(),
     );
   }
 

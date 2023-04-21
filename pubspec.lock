@@ -86,6 +86,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  flutter_rating_bar:
+    dependency: "direct main"
+    description:
+      name: flutter_rating_bar
+      sha256: d2af03469eac832c591a1eba47c91ecc871fe5708e69967073c043b2d775ed93
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -147,6 +155,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
+  oktoast:
+    dependency: "direct main"
+    description:
+      name: oktoast
+      sha256: fd5dd5c7dd02c41c56bdbdbc163351bd6cd59cba61c416daf255e35d1a86dce1
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.1"
   path:
     dependency: transitive
     description:
@@ -218,3 +234,4 @@ packages:
     version: "2.1.4"
 sdks:
   dart: ">=2.19.6 <3.0.0"
+  flutter: ">=3.0.0"

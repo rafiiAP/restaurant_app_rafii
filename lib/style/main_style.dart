@@ -11,6 +11,7 @@ class MainStyle {
     primaryColor: ColorConfig.mainColor,
     brightness: Brightness.light,
     cardTheme: const CardTheme(
+      color: ColorConfig.mainTransparent,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       elevation: 1,
       shape: RoundedRectangleBorder(

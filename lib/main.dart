@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:restaurant_app_rafii/page/home_restaurant_page.dart';
 import 'package:restaurant_app_rafii/style/main_style.dart';
 import 'injection.dart' as di;
@@ -15,13 +16,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Restaurant_app_rafii',
-      theme: MainStyle.light,
-      darkTheme: MainStyle.dark,
-      themeMode: ThemeMode.system,
-      home: const HomeRestaurant(),
+    return OKToast(
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Restaurant_app_rafii',
+        theme: MainStyle.light,
+        darkTheme: MainStyle.dark,
+        themeMode: ThemeMode.system,
+        home: const HomeRestaurant(),
+      ),
     );
   }
 }

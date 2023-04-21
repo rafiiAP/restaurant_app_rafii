@@ -22,7 +22,6 @@ class ModelRestaurant {
   });
 
   factory ModelRestaurant.fromJson(Map<String, dynamic> json) {
-    Map<String, dynamic> vaMenu = json["menus"] ?? {};
     return ModelRestaurant(
         id: json["id"] ?? "",
         name: json["name"] ?? "",
@@ -30,9 +29,7 @@ class ModelRestaurant {
         pictureId: json["pictureId"] ?? '',
         city: json["city"] ?? '',
         rating: double.parse(json["rating"].toString()),
-        menu: json['menus'] != null
-            ? ModelMenu.fromJson(json['menus'])
-            : ModelMenu.fromJson(json));
+        menu: ModelMenu.fromJson(json['menus']));
   }
 
   Map<String, dynamic> toJson() => {
@@ -52,6 +49,6 @@ class ModelRestaurant {
         pictureId: pictureId,
         city: city,
         rating: rating,
-        // menu: menu,
+        menu: menu,
       );
 }

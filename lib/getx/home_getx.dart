@@ -15,14 +15,7 @@ class GetxHome extends GetxController {
     result.fold(
         // ignore: avoid_print, prefer_interpolation_to_compose_strings
         (l) => print("Errorr " + l.message), (r) {
-      print('rrrrrrrrrrrrrrrr' + r.toString());
       vaRestaurant.value = r;
     });
   }
-
-  // @override
-  // void onInit() {
-  //   getDataRestaurant();
-  //   super.onInit();
-  // }
 }

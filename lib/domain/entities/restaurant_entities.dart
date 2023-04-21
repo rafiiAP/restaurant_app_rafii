@@ -11,7 +11,7 @@ class RestaurantEntity extends Equatable {
   String pictureId;
   String city;
   double rating;
-  Map<String, ModelMenu> menu;
+  ModelMenu? menu;
 
   RestaurantEntity({
     this.id = '',
@@ -20,7 +20,7 @@ class RestaurantEntity extends Equatable {
     this.pictureId = '',
     this.city = '',
     this.rating = 0.0,
-    this.menu = const {},
+    this.menu,
   });
 
   @override

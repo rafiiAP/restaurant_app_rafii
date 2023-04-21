@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:restaurant_app_rafii/style/color.dart';
 
 class CardWidget {
@@ -11,7 +12,9 @@ class CardWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            showToast(title, position: ToastPosition.bottom);
+          },
           child: Stack(
             children: [
               ClipRRect(
