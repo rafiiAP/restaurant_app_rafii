@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oktoast/oktoast.dart';
-import 'package:restaurant_app_rafii/style/color.dart';
 
 class CardWidget {
   static Widget horizontal(image, title) {
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       width: 170,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: InkWell(
-          onTap: () {
-            showToast(title, position: ToastPosition.bottom);
-          },
-          child: Stack(
-            children: [
-              ClipRRect(
+      child: InkWell(
+        onTap: () {
+          showToast(title, position: ToastPosition.bottom);
+        },
+        child: Column(
+          children: [
+            Expanded(
+              flex: 4,
+              child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
                   image,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                   width: Get.mediaQuery.size.width,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    title,
-                    style: Get.textTheme.labelLarge!.copyWith(
-                        color: ColorConfig.black, fontWeight: FontWeight.bold),
-                  ),
+            ),
+            Flexible(
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  title,
+                  style: Get.textTheme.labelLarge!
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

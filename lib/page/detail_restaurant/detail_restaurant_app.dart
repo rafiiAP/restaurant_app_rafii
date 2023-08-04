@@ -131,6 +131,7 @@ class DetailRestaurant extends StatelessWidget {
                   SizedBox(
                     height: 150,
                     child: ListView.builder(
+                      padding: const EdgeInsets.all(5),
                       itemCount: restaurantEntity.menu!.toEntity().foods.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, i) {
