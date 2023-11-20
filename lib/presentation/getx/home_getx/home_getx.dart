@@ -11,11 +11,14 @@ class GetxHome extends GetxController {
   Rx<List<RestaurantEntity>> vaRestaurant = Rx<List<RestaurantEntity>>([]);
 
   getDataRestaurant() async {
-    final result = await getListRestaurantUseCase.go();
-    result.fold(
-        // ignore: avoid_print, prefer_interpolation_to_compose_strings
-        (l) => print("Errorr " + l.message), (r) {
-      vaRestaurant.value = r;
+    getListRestaurantUseCase.getListRestaurant().then((value) {
+      vaRestaurant.value = value;
     });
+  }
+
+  @override
+  void onReady() {
+    getDataRestaurant();
+    super.onReady();
   }
 }

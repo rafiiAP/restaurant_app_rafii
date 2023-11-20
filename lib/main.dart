@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:oktoast/oktoast.dart';
-import 'package:restaurant_app_rafii/page/home_restaurant/home_restaurant_page.dart';
+import 'package:restaurant_app_rafii/presentation/page/home_restaurant/home_restaurant_page.dart';
 import 'package:restaurant_app_rafii/style/main_style.dart';
 import 'injection.dart' as di;
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: MainStyle.light,
         darkTheme: MainStyle.dark,
         themeMode: ThemeMode.system,
-        home: const HomeRestaurant(),
+        home: HomeRestaurant(),
       ),
     );
   }

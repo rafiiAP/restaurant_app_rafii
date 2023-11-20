@@ -20,19 +20,16 @@ class DetailRestaurant extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            Hero(
-              tag: 'image',
-              child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
-                ),
-                child: Image.network(
-                  restaurantEntity.pictureId,
-                  fit: BoxFit.cover,
-                  width: Get.mediaQuery.size.width,
-                  height: Get.size.height / 3,
-                ),
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+              child: Image.network(
+                restaurantEntity.pictureId,
+                fit: BoxFit.cover,
+                width: Get.mediaQuery.size.width,
+                height: Get.size.height / 3,
               ),
             ),
             Padding(

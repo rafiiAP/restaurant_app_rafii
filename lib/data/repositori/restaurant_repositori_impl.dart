@@ -3,10 +3,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:restaurant_app_rafii/data/datasources/restaurant_data.dart';
 import 'package:restaurant_app_rafii/domain/entities/restaurant_entities.dart';
-import 'package:restaurant_app_rafii/data/failur/failur.dart';
+import 'package:restaurant_app_rafii/data/failur.dart';
 import 'package:restaurant_app_rafii/domain/repositories/restaurant_repositories.dart';
 
-import '../exception/exception.dart';
+import '../exception.dart';
 
 class RestaurantRepositoriesImpl implements RestaurantRepositories {
   final RestaurantData restaurantData;

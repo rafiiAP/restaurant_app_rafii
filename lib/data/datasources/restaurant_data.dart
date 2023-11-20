@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:restaurant_app_rafii/data/model/model_restaurant.dart';
 
-import '../exception/exception.dart';
+import '../exception.dart';
 
 abstract class RestaurantData {
   Future<List<ModelRestaurant>> getListRestaurant();
